@@ -1,0 +1,108 @@
+<%- include('partials/header'); -%>
+
+<div class="container-1 center">
+
+  <h1 class="title center"> <b> The weather at any place!</b></h1>
+
+  <form class="center" action="/" method="post">
+
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">
+        <div class="input-group">
+          <input id="cityInput" type="text" class="input center form-control" name="cityName" placeholder="Enter a City"
+            autocomplete="off">
+          <button type="submit" class="btn form-group">Search</button>
+        </div>
+      </div>
+    </div>
+</div>
+</form>
+
+<% if(data !== null){%>
+<div class="container-2 container">
+  <h1 class="today center"> <b> Today's <%= today %> Weather: </b></h1>
+  <hr class="line1">
+  <div class="row">
+    <h3 class="col-md-6 city"><b><%=data.name + " " + data.sys.country %></b></h3>
+    <div class="col-md-6">
+      <h1 class="temp"><b> <%= Math.round(data.main.temp * 10)/10 + " " %> <span class="degrees"> °C </span> </b></h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-5 ">
+      <h3 class="description "><%=data.weather[0].description %></h3>
+    </div>
+    <div class="col-md-1">
+      <img src="<%= img %>" alt="" class="icon">
+    </div>
+  </div>
+
+  <hr class="line2">
+  <div class="rowcontainer">
+    <div class="row cols">
+      <div class="windImg col-sm-1">
+        <img src="/images/wind.png" alt="wind image" width="38px" height="38px">
+      </div>
+      <div class="weatherInfo col-md-5">
+        <p>Wind Speed: <%=" " + data.wind.speed + " " %> km/h</p>
+      </div>
+
+      <div class="humidImg col-sm-1">
+        <img src="/images/humidity.png" alt="humidity" width="38px" height="38px">
+      </div>
+      <div class="weatherInfo col-md-5">
+        <p>Humidity: <%= " " + data.main.humidity %> %</p>
+      </div>
+    </div>
+
+    <div class="row cols">
+      <div class="minTempImg col-sm-1">
+        <img src="/images/low-temperature.png" width="45px" height="45px">
+      </div>
+      <div class="weatherInfo col-md-5">
+        <p>Min. Temperature: <%= " " + Math.round(data.main.temp_min*10)/10 %> °C </p>
+      </div>
+      <div class="maxTempImg col-sm-1">
+        <img src="/images/high-temperature.png" width="45px" height="45px">
+      </div>
+      <div class="weatherInfo col-md-5">
+        <p>Max. Temperature: <%= " " + Math.round(data.main.temp_max*10)/10 %> °C</p>
+      </div>
+    </div>
+
+    <div class="row cols">
+      <div class="minTempImg col-sm-1">
+        <img src="/images/tshirt.png" width="35px" height="35px">
+      </div>
+      <div class="weatherInfo col-md-5">
+        <p>Feels-like Temperature: <%= " " + Math.round(data.main.feels_like) %> °C</p>
+      </div>
+      <div class="maxTempImg col-sm-1">
+        <img src="/images/cloud.png" alt="cloud image" width="40px" height="40px">
+      </div>
+      <div class="weatherInfo col-md-5">
+        <p>Cloudiness: <%=" " + data.clouds.all %> %</p>
+      </div>
+    </div>
+
+    <div class="row cols">
+      <div class="minTempImg col-sm-1">
+        <img src="/images/sunrise.png" alt="sunrise" width="45px" height="45px">
+      </div>
+      <div class="weatherInfo col-md-5">
+        <p>Sunrise: <%=" " + sunR %></p>
+      </div>
+      <div class="minTempImg col-sm-1">
+        <img src="/images/sunset.png" alt="sunset" width="45px" height="45px">
+      </div>
+      <div class="weatherInfo col-md-5">
+        <p>Sunset: <%= " " + sunS %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%}%>
+
+<%- include('partials/footer'); -%>

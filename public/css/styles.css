@@ -1,0 +1,204 @@
+body {
+  background-image: url("/images/mountainSkyline-bw.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(199, 215, 235, 0.89);
+}
+
+.disable-select {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}
+
+.center {
+  text-align: center;
+}
+
+/***********TOP CONTAINER + INSIDE*********************/
+.container-1 {
+  background-color: rgba(45, 69, 99, 0.8);
+  border-radius: 30px;
+  margin: auto;
+  padding-top: 20px;
+  position: relative;
+  top: 30px;
+  height: 215px;
+  width: 40%;
+}
+
+.input {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgba(180, 202, 228, 0.75);
+  outline: none;
+  height: 40px;
+  margin: auto;
+  padding: 25px;
+  font-size: 1.8rem;
+}
+
+::placeholder {
+  color: rgba(180, 202, 228, 0.45);
+}
+
+.btn {
+  position: relative;
+  top: 20px;
+  width: 90px;
+  background-color: transparent;
+  border-color: rgba(180, 202, 228, 0.85);
+  color: rgba(180, 202, 228, 0.85);
+  border-radius: 25px;
+}
+
+.btn:hover {
+  color: rgba(236, 178, 161, 0.85);
+  border-color: rgba(236, 178, 161, 0.85);
+}
+
+.title {
+  color: rgba(236, 178, 161, 0.91);
+  font-size: 2.8rem;
+}
+
+/**********************@MEDIA 1200PX******************/
+@media screen and (max-width: 1200px) {
+  .container-1 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cols {
+    margin-left: auto;
+  }
+}
+
+/********************* BOTTOM CONTAINER **************/
+.container-2 {
+  background-color: rgba(45, 69, 99, 0.8);
+  width: 40%;
+  border-radius: 30px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  top: 50px;
+}
+
+.rowcontainer {
+  padding-left: 20px;
+}
+
+.line1 {
+  border-color: rgba(236, 178, 161, 0.5);
+}
+
+.line2 {
+  border: 1px dotted rgba(180, 202, 228, 0.38);
+  width: 400px;
+  border-radius: 80%;
+  position: relative;
+  bottom: 25px;
+}
+
+.temp {
+  font-size: 6.5rem;
+  float: right;
+  position: relative;
+  right: 35px;
+  bottom: 15px;
+  letter-spacing: 3px;
+}
+
+.degrees {
+  font-size: 4rem;
+  position: relative;
+  bottom: 20px;
+}
+
+.city {
+  margin: 0;
+  position: relative;
+  left: 30px;
+  top: 13px;
+  font-size: 2.6rem;
+}
+
+.description {
+  font-size: 2.4rem;
+  position: relative;
+  left: 30px;
+  font-weight: 300;
+  color: rgba(236, 178, 161, 0.9);
+}
+
+.icon {
+  position: relative;
+  bottom: 27px;
+  left: 115px;
+}
+
+.list-group-item {
+  color: black;
+}
+
+.today {
+  font-size: 2rem;
+  color: rgba(236, 178, 161, 0.91);
+  margin: 0;
+}
+
+/******************COLS*********************/
+.cols {
+  margin-top: 20px;
+  margin-left: 3px;
+  font-size: 1.35rem;
+}
+
+.weatherInfo {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+/***************FOOTER***********************/
+.footer {
+  color: rgba(235, 199, 207, 0.3);
+  margin-top: 6%;
+}
+
+/**************ERROR PAGE****************/
+.btn-error {
+  width: 120px;
+  height: 40px;
+  background-color: transparent;
+  border-color: rgba(174, 224, 209, 0.85);
+  color: rgba(174, 224, 209, 0.85);
+  border-radius: 25px;
+  margin-top: 25px;
+}
+
+.btn-error:hover {
+  color: rgba(236, 178, 161, 0.85);
+  border-color: rgba(236, 178, 161, 0.85);
+}
+
+.error-div {
+  margin-top: 200px;
+  padding: 30px;
+  background-color: rgba(27, 49, 75, 0.56);
+}
+
+.oops {
+  font-size: 2.6rem;
+  color: black;
+}
