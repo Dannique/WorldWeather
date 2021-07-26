@@ -14,14 +14,16 @@ app.use(express.static("public"));
 
 app.set('view engine', 'ejs');
 
-app.get("/", (req, res) => {
+app.route("/")
+
+.get((req, res) => {
   res.render('index', {
     data: null,
     error: "Enter a city name to get weather data"
   });
 })
 
-app.post("/", (req, res) => {
+.post((req, res) => {
   const query = req.body.cityName;
   const apiKey = process.env.OPENWEATHER_API;
   const units = "metric";
