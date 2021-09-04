@@ -42,29 +42,16 @@ app.route("/")
   //requesting data from openWeather Servers
   https.get(url, response => {
     response.on("data", data => {
-      //use try and catch to catch all possible errors
+
       try {
         const day = getDay();
         const weatherData = JSON.parse(data);
         const icon = weatherData.weather[0].icon;
         const image = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-        // const srTime = new Date(weatherData.sys.sunrise * 1000);
-        // // getTimezoneOffset() * 60
-        // const sr = srTime.toLocaleTimeString('en-US', {
-        //   hour: 'numeric',
-        //   minute: 'numeric'
-        // }); ///not correct (minus (+2GMT))
-        // const ssTime = new Date((weatherData.sys.sunset + weatherData.timezone) * 1000);
-        // const ss = ssTime.toLocaleTimeString('en-US', {
-        //   hour: 'numeric',
-        //   minute: 'numeric'
-        //}); ///not correct
 
         res.render("index", {
           today: day,
           data: weatherData,
-          //sunR: sr,
-          //sunS: ss,
           img: image,
           error: null
         });
